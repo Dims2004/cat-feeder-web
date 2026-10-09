@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-body bg-cream text-deepsea overflow-x-hidden;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-stroke {
+    -webkit-text-stroke: 2px #023047;
+  }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* 🆕 Animasi Fade In — dipakai di bank selection & info rekening */
+  .animate-fadeIn {
+    animation: fadeIn 0.4s ease-out;
+  }
+}
+
+/* 🆕 Keyframes fadeIn */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #FFF8E7; }
+::-webkit-scrollbar-thumb {
+  background: #FFB703;
+  border-radius: 10px;
+  border: 2px solid #FFF8E7;
+}
+::-webkit-scrollbar-thumb:hover { background: #FB8500; }
